@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --primary-Soft-Pink: hsl(333, 80%, 67%);
+    --neutral-Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --neutral-Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --neutral-White: hsl(0, 0%, 100%);
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(images/bg-pattern-top-mobile.svg), url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, right bottom ;
+    padding: 1.125rem;
+}
+
+/* LAYOUT STYLING START */
+
+
+.container {
+    max-width: 75rem;
+    height: auto;
+    margin-top: 1.875rem;
+}
+
+.container__header {
+    margin-bottom: 2.1875rem;
+}
+
+.container__review-bars {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+}
+
+.review-bars--reviews {
+    background: var(--neutral-Light-Grayish-Magenta);
+    border-radius: 0.625rem;
+    padding: 0.8125rem;
+}
+
+.review-bars--icons {
+    margin-bottom: 0.3125rem;
+}
+
+.review-bars--icons img + img {
+    margin-left: 0.25rem;
+}
+
+.container__buyer-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: start;
+    row-gap: 1.125rem;
+}
+
+.buyer-card {
+    height: fit-content;
+    border-radius: 9px;
+    background: var(--primary-Very-Dark-Magenta);
+    padding: 2.1875rem 1.875rem 1.875rem;
+}
+
+.buyer-card--info {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8125rem;
+    margin-bottom: 1.1875rem;
+}
+
+.buyer--avatar {
+    border-radius: 50%;
+    width: 2.5rem; 
+    border: 0.10rem solid var(--primary-Soft-Pink);
+}
+
+
+
+/* LAYOUT STYLING END */
+
+/* TYPOGRAPHY START */
+
+
+.header__title {
+    margin: 0 1.25rem 1.125rem;
+    font-size: 2.9rem;
+    font-weight: 700;
+    color: var(--primary-Very-Dark-Magenta);
+    line-height: 0.9;
+}
+
+.header--description {
+    color: var(--neutral-Dark-Grayish-Magenta);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.review-bars--description {
+    color: var(--primary-Very-Dark-Magenta);
+    font-weight: 700;
+}
+
+.buyer--name {
+    color: var(--neutral-White);
+    font-weight: 500;
+}
+
+.buyer--status {
+    color: var(--primary-Soft-Pink);
+    font-size: 0.8666666666666667rem;  
+}
+
+.buyer-card--review {
+    color: var(--neutral-White);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* TYPOGRAPHY END */
+
+
+/* DESKTOP LAYOUT DESIGN */
+
+/* media queries */
+
+
+
+
+@media screen and (min-width: 1042px) {
+    body {
+        text-align: start;
+        background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: left top, right bottom ;
+        font-size: 16px;
+    }
+
+    .container {
+        height: auto;
+        /* border: 5px solid orange; */
+        display: grid;
+        grid-template-areas: 
+        "header reviews"
+        "buyers buyers";
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(100px, auto);
+    }
+
+    .container__header {
+        grid-area: header;
+    }
+
+    .container__review-bars {
+        grid-area: reviews;
+    }
+
+    .container__buyer-card {
+        grid-area: buyers;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .container__header {
+        padding-right: 8.98rem; 
+    }
+
+    .header__title {
+        margin-left: 0;
+        margin-right: 8.75rem;
+    }
+
+    .container__review-bars {
+        padding-top: 1.5rem;
+        align-items: flex-end;
+    }
+
+    .review-bars--reviews {
+        width: 25rem;
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+
+    #guru {
+        margin-right: 2.5rem;
+    }
+
+    #reviews {
+        margin-right: 6.5rem;
+    }
+
+    #Irene-card {
+        margin-top: 1.35rem;
+    }
+
+    #Anne-card {
+        margin-top: 2.85rem;
+    }
+}
+   
+
+
